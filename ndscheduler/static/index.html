@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html  lang="zh-Hant-TW">
+<!--html lang="en"-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,13 +38,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li id="jobs-tab"><a href="#jobs">Jobs</a></li>
-            <li id="executions-tab"><a href="#executions">Executions</a></li>
-            <li id="logs-tab"><a href="#logs">Audit Logs</a></li>
+            <li id="jobs-tab"><a href="#jobs">工作</a></li>
+            <li id="executions-tab"><a href="#executions">執行</a></li>
+            <li id="logs-tab"><a href="#logs">稽核紀錄</a></li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <i class="caret"></i></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">文件 <i class="caret"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="https://github.com/Nextdoor/ndscheduler" target="_blank">ndscheduler GitHub page</a></li>
+                    <li><a href="https://github.com/Nextdoor/ndscheduler" target="_blank">ndscheduler GitHub 網頁</a></li>
                 </ul>
             </li>
           </ul>
@@ -57,20 +58,20 @@
                 <div id="jobs-page-sidebar" style="display:none">
                     <form role="form">
                         <div class="form-group">
-                            <a id="add-job-button" data-toggle="modal" data-target="#add-job-modal" class=" form-control btn btn-primary">New Job</a>
+                            <a id="add-job-button" data-toggle="modal" data-target="#add-job-modal" class=" form-control btn btn-primary">新工作</a>
                         </div>
                         <div class="form-group">
-                            <button class="form-control btn btn-primary" id="jobs-refresh-button">Refresh</button>
+                            <button class="form-control btn btn-primary" id="jobs-refresh-button">刷新頁面</button>
                         </div>
                     </form>
 
                     <div class="panel panel-default">
-                        <div class="panel-heading">Statistics</div>
+                        <div class="panel-heading">統計</div>
                         <div class="panel-body" id="jobs-stats">
                             <small>
-                            Total: <span id="jobs-total-count">-</span><br>
-                            <span class="success-color">Active: <span id="jobs-active-count">-</span> </span><br>
-                            <span class="failed-color">Inactive: <span id="jobs-inactive-count">-</span> </span>
+                            統計： <span id="jobs-total-count">-</span><br>
+                            <span class="success-color">使用中： <span id="jobs-active-count">-</span> </span><br>
+                            <span class="failed-color">非使用中： <span id="jobs-inactive-count">-</span> </span>
                             </small>
                         </div>
                     </div>
@@ -79,26 +80,26 @@
                 <div id="executions-page-sidebar" style="display:none">
                     <div class="form-group">
                         <select class="form-control" id="filter-time-range">
-                            <option value="600">10 minutes</option>
-                            <option value="3600">1 hour</option>
-                            <option value="43200">12 hours</option>
-                            <option value="86400">24 hours</option>
+                            <option value="600">10 分鐘</option>
+                            <option value="3600">1 小時</option>
+                            <option value="43200">12 小時</option>
+                            <option value="86400">24 小時</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <button class=" form-control btn btn-primary" id="filter-button">Refresh</button>
+                        <button class=" form-control btn btn-primary" id="filter-button">刷新頁面</button>
                     </div>
 
                     <div class="panel panel-default">
-                        <div class="panel-heading">Statistics</div>
+                        <div class="panel-heading">統計</div>
                         <div class="panel-body">
                             <small>
-                            Total: <span id="executions-total-count">-</span><br>
-                            <span class="scheduled-color">Scheduled: <span id="executions-scheduled-count">-</span></span><br>
-                            <span class="running-color">Running: <span id="executions-running-count">-</span></span><br>
-                            <span class="success-color">Success: <span id="executions-success-count">-</span></span><br>
-                            <span class="scheduled-error-color">Scheduled Error: <span id="executions-scheduled-error-count">-</span></span><br>
-                            <span class="failed-color">Failed: <span id="executions-failed-count">-</span></span>
+                            統計： <span id="executions-total-count">-</span><br>
+                            <span class="scheduled-color">排程： <span id="executions-scheduled-count">-</span></span><br>
+                            <span class="running-color">執行中： <span id="executions-running-count">-</span></span><br>
+                            <span class="success-color">成功： <span id="executions-success-count">-</span></span><br>
+                            <span class="scheduled-error-color">排程錯誤： <span id="executions-scheduled-error-count">-</span></span><br>
+                            <span class="failed-color">失敗： <span id="executions-failed-count">-</span></span>
                             </small>
                         </div>
                     </div>
@@ -107,14 +108,14 @@
                 <div id="logs-page-sidebar" style="display:none">
                     <div class="form-group">
                         <select class="form-control" id="logs-filter-time-range">
-                            <option value="600">10 minutes</option>
-                            <option value="3600">1 hour</option>
-                            <option value="43200">12 hours</option>
-                            <option value="86400">24 hours</option>
+                            <option value="600">10 分鐘</option>
+                            <option value="3600">1 小時</option>
+                            <option value="43200">12 小時</option>
+                            <option value="86400">24 小時</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <button class=" form-control btn btn-primary" id="logs-filter-button">Refresh</button>
+                        <button class=" form-control btn btn-primary" id="logs-filter-button">刷新頁面</button>
                     </div>
                 </div> <!-- logs-page-sidebar -->
             </div>
@@ -123,15 +124,15 @@
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
                 <div id="jobs-page-content" style="display:none">
-                    <h2 class="sub-header">Jobs</h2>
+                    <h2 class="sub-header">工作</h2>
                     <div class="table-responsive">
                         <table class="table table-striped display" id="jobs-table">
                             <thead>
                                 <tr>
-                                    <th>Job Name</th>
-                                    <th>Schedule (UTC)</th>
-                                    <th>Next Run</th>
-                                    <th>Action</th>
+                                    <th>工作名稱</th>
+                                    <th>排程 (UTC)</th>
+                                    <th>下次執行</th>
+                                    <th>動作</th>
                                 </tr>
                             </thead>
                             <tbody id="jobs-table-body">
@@ -142,16 +143,16 @@
                 </div> <!-- jobs-page-content -->
 
                 <div id="executions-page-content"  style="display:none">
-                    <h2 class="sub-header">Executions</h2>
+                    <h2 class="sub-header">執行</h2>
                     <div class="table-responsive">
                         <table class="table table-striped" id="executions-table">
                             <thead>
                             <tr>
-                                <th>Job Name</th>
-                                <th>Status</th>
-                                <th>Scheduled At (local)</th>
-                                <th>Last Updated At (local)</th>
-                                <th>Description</th>
+                                <th>工作名稱</th>
+                                <th>狀態</th>
+                                <th>排程時間 (local)</th>
+                                <th>最後更新時間 (local)</th>
+                                <th>描述</th>
                                 <th></th>
                             </tr>
                             </thead>
@@ -164,16 +165,16 @@
                 </div> <!-- executions-page-content -->
 
                 <div id="logs-page-content" style="display:none">
-                    <h2 class="sub-header">Audit Logs</h2>
+                    <h2 class="sub-header">稽核紀錄</h2>
                     <div class="table-responsive">
                         <table class="table table-striped" id="logs-table">
                             <thead>
                             <tr>
-                                <th>Job Name</th>
-                                <th>Event</th>
-                                <th>User</th>
-                                <th>Time (local)</th>
-                                <th>Description</th>
+                                <th>工作名稱</th>
+                                <th>事件</th>
+                                <th>使用者</th>
+                                <th>時間 (local)</th>
+                                <th>描述</th>
                             </tr>
                             </thead>
                             <tbody id="logs-table-body">
